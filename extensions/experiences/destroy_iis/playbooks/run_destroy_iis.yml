@@ -1,0 +1,11 @@
+---
+- name: Create IIS Server Play
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create IIS Server
+      ansible.builtin.include_role:
+        name: infra.windows_ops.windows_manage_iis
+      vars:
+        windows_manage_iis_name: "{{ iis_name }}"  # Set by survey
+        windows_manage_iis_operation: "destroy"

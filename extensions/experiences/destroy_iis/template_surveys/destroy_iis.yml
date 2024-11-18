@@ -1,0 +1,15 @@
+---
+name: "Destroy IIS Configuration Survey"
+description: "Survey to configure destroy IIS options"
+spec:
+  - type: "text"
+    question_name: "Server Name"
+    question_description: "Name of the IIS Web Server"
+    variable: "iis_name"
+    required: true
+
+  - type: "text"
+    question_name: "Remove Feature"
+    question_description: "Check this option if you want to remove the IIS Server Service"
+    variable: "iis_remove_feature"
+    required: false
