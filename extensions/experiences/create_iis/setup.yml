@@ -2,13 +2,29 @@
 # Labels
 #
 controller_labels:
-  - name: operations
-    organization: Default
+  - name: infra.windows_ops
+    organization: "{{ organization | default('Default') }}"
+  - name: create_iis
+    organization: "{{ organization | default('Default') }}"
+  - name: run_create_iis
+    organization: "{{ organization | default('Default') }}"
+
+# Execution Environments
+#
+controller_execution_environments:
+  # - name: apd-ee-25
+  #   description: apd-ee-25
+  #   image: quay.io/ansible-product-demos/apd-ee-25
+  #   pull: always
+  - name: apd-ee-25-rhel
+    description: Allow running RHEL experience demo. Based on apd-ee-25.
+    image: quay.io/p3ck/apd-ee-25-experience:latest
+    pull: always
 
 # Projects
 #
 controller_projects:
-  - name: Windows Ops Playbooks Project
+  - name: Windows Operations / Project
     organization: Default
     scm_branch: main
     scm_clean: 'no'
@@ -21,7 +37,7 @@ controller_projects:
 # Job Templates
 #
 controller_templates:
-  - name: Operations / Create IIS
+  - name: Windows Operations / Create IIS
     ask_inventory_on_launch: true
     labels:
       - infra.windows_ops

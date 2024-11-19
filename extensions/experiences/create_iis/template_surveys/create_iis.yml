@@ -14,7 +14,7 @@ spec:
     variable: "iis_path"
     required: true
 
-  - type: "text"
+  - type: "integer"
     question_name: "Server Port"
     question_description: "Network port to listen on"
     variable: "iis_port"

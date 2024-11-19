@@ -8,8 +8,12 @@ spec:
     variable: "iis_name"
     required: true
 
-  - type: "text"
-    question_name: "Remove Feature"
+  - type: "multiplechoice"
+    question_name: "Remove Feature IIS"
     question_description: "Check this option if you want to remove the IIS Server Service"
+    choices:
+      - "True"
+      - "False"
     variable: "iis_remove_feature"
+    default: "False"
     required: false
